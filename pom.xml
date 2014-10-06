@@ -17,7 +17,6 @@
         <org.slf4j-version>1.7.5</org.slf4j-version>
         <ch.qos.logback-version>1.0.13</ch.qos.logback-version>
         <org.thymeleaf-version>2.1.2.RELEASE</org.thymeleaf-version>
-        <org.thymeleaf.extras.springsecurity3-version>2.1.1.RELEASE</org.thymeleaf.extras.springsecurity3-version>
     </properties>
     <repositories>
         <repository>
@@ -71,6 +70,11 @@
         </dependency>
         <!-- Security -->
         <!-- View -->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.18.0-GA</version>
+        </dependency>
         <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf</artifactId>
@@ -258,6 +262,8 @@
                 <version>2.2</version>
                 <configuration>
                     <contextReloadable>true</contextReloadable>
+                    <port>9090</port>
+                    <path>/</path>
                 </configuration>
             </plugin>
             <plugin>
