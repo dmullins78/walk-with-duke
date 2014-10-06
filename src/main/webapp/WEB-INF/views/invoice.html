@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout"
+      xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <section layout:fragment="content">
+            <form class="form-narrow form-horizontal" action="/j_spring_security_check" method="post" th:object="${model}" th:action="@{/invoice}">
+            <fieldset>
+                <legend>Create Invoice</legend>
+                <div class="form-group">
+                    <label for="email" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-10">
+                        <input type="text" id="email" th:field="*{name}" placeholder="Name" class="input" th:errorclass="error" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount" class="col-lg-2 control-label">Amount</label>
+                    <div class="col-lg-10">
+                        <input type="text" id="amount" th:field="*{amount}" placeholder="Amount Owed" class="input" th:errorclass="error" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button type="submit" class="btn btn-default">Sign in</button>
+                    </div>
+                </div>
+            </fieldset>
+           </form>
+        </section>
+    </body>
+</html>

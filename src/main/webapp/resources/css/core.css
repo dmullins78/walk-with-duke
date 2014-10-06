@@ -1,0 +1,15 @@
+body {
+  padding-top: 50px;
+}
+.center-well {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+input {
+    width: 50%;
+}
+
+.error {
+    background-color: red;
+}
