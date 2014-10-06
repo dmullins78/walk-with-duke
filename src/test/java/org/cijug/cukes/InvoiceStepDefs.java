@@ -54,7 +54,7 @@ public class InvoiceStepDefs extends WebAppConfigurationAware {
         MvcResult mvcResult = mockMvc.perform(get("/invoices"))
                 .andExpect(model().attributeExists("invoices"))
                 .andExpect(view().name("invoices"))
-                .andExpect(content().string(allOf(containsString("<td>Google</td>"), containsString("<td>Apple</td>"))))
+                .andExpect(content().string(allOf(containsString("<td>Googler</td>"), containsString("<td>Apple</td>"))))
                 .andReturn();
 
         outstandingBalance = (String) mvcResult.getModelAndView().getModel().get("balance");

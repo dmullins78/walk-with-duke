@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,6 +20,18 @@ class InvoiceController {
     @Autowired
     public InvoiceController(InvoiceRepository invoiceRepository) {
         this.invoiceRepository = invoiceRepository;
+    }
+
+    @RequestMapping(value = "/")
+    public String home() {
+        return "home";
+    }
+
+    @RequestMapping(value = "invoice/{id}")
+    public String showInvoice(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("model", invoiceRepository.findById(id));
+
+        return "invoice";
     }
 
     @RequestMapping(value = "invoice")
@@ -45,8 +58,7 @@ class InvoiceController {
             return "invoice";
         }
 
-        Invoice saved = invoiceRepository.save(invoice);
-        System.out.println("saved.getId() = " + saved.getId());
+        invoiceRepository.save(invoice);
 
         return "redirect:/invoices";
     }

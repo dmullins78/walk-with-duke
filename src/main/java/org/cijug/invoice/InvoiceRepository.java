@@ -37,5 +37,7 @@ public class InvoiceRepository {
 		}
 	}
 
-
+    public Invoice findById(Long id) {
+        return entityManager.find(Invoice.class, id);
+    }
 }

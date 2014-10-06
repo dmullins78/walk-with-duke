@@ -20,9 +20,9 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" th:href="@{/}">Home</a></li>
+                        <li><a href="#" th:href="@{/invoices}">Invoices</a></li>
+                        <li><a href="#" th:href="@{/invoice}">New</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -30,8 +30,8 @@
 
         <div class="container">
             <div class="center-well" layout:fragment="content">
-                <h1>Bootstrap starter template</h1>
-                <p class="lead">Use this document as a way to quickly start any new project.<br/> All you get is this text and a mostly barebones HTML document.</p>
+                <h1>Invoice Tracking System</h1>
+                <p class="lead">Use this to keep track of people who owe you money</p>
             </div>
         </div>
 
