@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import java.util.Collection;
-import java.util.List;
 
 @Repository
 @Transactional(readOnly = true)
@@ -28,10 +27,10 @@ public class InvoiceRepository {
         return (Collection<Invoice>) query.getResultList();
 	}
 
-	public Invoice findByEmail(String email) {
+	public Invoice findByName(String name) {
 		try {
-			return entityManager.createNamedQuery(Invoice.FIND_BY_EMAIL, Invoice.class)
-					.setParameter("email", email)
+			return entityManager.createNamedQuery(Invoice.FIND_BY_NAME, Invoice.class)
+					.setParameter("email", name)
 					.getSingleResult();
 		} catch (PersistenceException e) {
 			return null;

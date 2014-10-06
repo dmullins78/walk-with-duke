@@ -33,7 +33,7 @@ class InvoiceController {
         Collection<Invoice> invoices = invoiceRepository.getAll();
         model.addAttribute("invoices", invoices);
 
-        Integer sum = invoices.stream().filter((x) -> x.isOutstanding()).mapToInt(Invoice::getAmount).sum();
+        Integer sum = invoices.stream().filter(Invoice::isOutstanding).mapToInt(Invoice::getAmount).sum();
         model.addAttribute("balance", "" + sum);
 
         return "invoices";
