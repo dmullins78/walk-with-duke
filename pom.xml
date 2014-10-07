@@ -18,7 +18,7 @@
         <org.thymeleaf-version>2.1.2.RELEASE</org.thymeleaf-version>
     </properties>
     <scm>
-        <developerConnection>git:git@github.com:dmullins78/walk-with-duke.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:dmullins78/walk-with-duke.git</developerConnection>
     </scm>
     <repositories>
         <repository>
