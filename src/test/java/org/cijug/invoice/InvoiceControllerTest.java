@@ -32,24 +32,19 @@ public class InvoiceControllerTest {
         Invoice notPaid = new Invoice("one", 200, false);
         Invoice paid = new Invoice("two", 100, true);
         invoices = asList(notPaid, paid);
+
+        when(invoiceRepository.getAll()).thenReturn(invoices);
+        controller.showOpenInvoices(model);
     }
 
     @Test
     public void shouldPutInvoicesInMap() throws Exception {
-        when(invoiceRepository.getAll()).thenReturn(invoices);
-
-        controller.showOpenInvoices(model);
-
         Collection<Invoice> invoices = (Collection<Invoice>) fromMap("invoices");
         assertThat(2, is(invoices.size()));
     }
 
     @Test
     public void shouldCalculateOutstandingBalance() throws Exception {
-        when(invoiceRepository.getAll()).thenReturn(invoices);
-
-        controller.showOpenInvoices(model);
-
         assertThat("200", is(fromMap("balance")));
     }
 
