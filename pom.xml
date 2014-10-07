@@ -258,12 +258,24 @@
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <contextReloadable>true</contextReloadable>
-                    <port>9090</port>
-                    <path>/</path>
-                </configuration>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <id>tomcat-run</id>
+                        <goals>
+                            <goal>exec-war-only</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <path>/walk-with-duke</path>
+                        </configuration>
+                    </execution>
+                </executions>
+                <!--<configuration>-->
+                    <!--<contextReloadable>true</contextReloadable>-->
+                    <!--<port>9090</port>-->
+                    <!--<path>/</path>-->
+                <!--</configuration>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
