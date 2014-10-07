@@ -25,6 +25,15 @@ public class Invoice implements java.io.Serializable {
     @Column
     private boolean paid;
 
+    public Invoice() {
+    }
+
+    public Invoice(String name, int amount, boolean paid) {
+        this.name = name;
+        this.amount = amount;
+        this.paid = paid;
+    }
+
     public Long getId() {
 		return id;
 	}

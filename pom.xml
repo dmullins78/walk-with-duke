@@ -271,11 +271,10 @@
                         </configuration>
                     </execution>
                 </executions>
-                <!--<configuration>-->
-                    <!--<contextReloadable>true</contextReloadable>-->
-                    <!--<port>9090</port>-->
-                    <!--<path>/</path>-->
-                <!--</configuration>-->
+                <configuration>
+                    <contextReloadable>true</contextReloadable>
+                    <port>9090</port>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
